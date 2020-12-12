@@ -101,13 +101,17 @@ class MarvelManager
                     "offset" => $offset,
                 ]
             );
-            return array_map(function ($character) {
-                return [
-                    "id" => $character["id"],
-                    "name" => $character["name"],
-                    "thumbnail" => $character["thumbnail"]["path"] . "." . $character["thumbnail"]["extension"],
-                ];
-            }, $request->toArray()["data"]["results"]);
+            $data = $request->toArray()["data"];
+            return [
+                "total" => $data["total"],
+                "data" => array_map(function ($character) {
+                    return [
+                        "id" => $character["id"],
+                        "name" => $character["name"],
+                        "thumbnail" => $character["thumbnail"]["path"] . "." . $character["thumbnail"]["extension"],
+                    ];
+                }, $data["results"])
+            ];
         } catch (Exception $exception) {
             return [];
         }

@@ -34,7 +34,10 @@ class MarvelTest extends TestCase
      */
     public function testGetCharacters(): array
     {
-        $characters = $this->marvelManager->getCharacters(0, 20);
+        $data = $this->marvelManager->getCharacters(0, 20);
+        $this->assertArrayHasKey("total", $data);
+        $this->assertArrayHasKey("data", $data);
+        $characters = $data["data"];
         $this->assertIsArray($characters);
         $this->assertSame(20, sizeof($characters));
         $character = current($characters);
