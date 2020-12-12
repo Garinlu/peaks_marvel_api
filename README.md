@@ -14,7 +14,7 @@ Symfony 5.2
 To use this API, you must clone this repository
 
 ```shell
-git clone git@github.com:puppeteer/puppeteer.git
+git clone git@github.com:Garinlu/peaks_marvel_api.git
 ```
 
 Then, install all bundles :
