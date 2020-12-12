@@ -20,7 +20,7 @@ git clone git@github.com:Garinlu/peaks_marvel_api.git
 Then, install all bundles :
 
 ```shell
-npm install
+composer install
 ```
 
 To finish, you must serve your application. There is an example for Nginx :
